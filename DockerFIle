@@ -1,0 +1,17 @@
+version: "3.11"
+
+services:
+  boards:
+    image:defenderwarrior/boards_a:latest
+    environment:
+      - ./.env
+    deploy:
+      replicas: 3
+    ports:
+      - "8001:8000"
+    networks:
+      - board
+
+networks:
+  board:
+    external: true
